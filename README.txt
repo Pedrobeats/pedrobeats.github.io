@@ -1,33 +1,29 @@
-Strata by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Olá me chamo Pedro Moreno
 
+Aqui vai um pouquinho sobre mim
 
-A simple, minimalist template that actually began life as an unused redesign of my
-personal site. Includes a (configurable) parallax background effect, Poptrox-powered
-lightbox gallery, a bunch of pre-styled elements, and Sass sources for the Sass-inclined.
+Sou viciado por tecnologia e inovação, professor de língua inglesa como primeira formação, sempre usei tecnologia e metodologias ativas ao ensinar. Quando iniciei na Secretaria de Educação do Espírito Santo me apaixonei por dados:
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Criei na Secretaria de Educação, junto a Gerencia de Planejamento, a lógica do SIMPLER (Simulador de Planejamento de Implantação das escolas públicas), otimizando o instrumento que já existia, assim como desenvolvi um sistema interno de base de dados e resultados utilizando inicialmento o Power BI, para em seguida criar um painel mais robusto usando Python e a biblioteca StreamLit (meu crush atual ❤)
 
-(* = Not included)
+Neste último ano então retomei minha paixão por programação e começei a aplicar o Python e suas bibliotecas em projetos pessoais e de trabalho.
 
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
+-----------------------------------------------------------------------------------------------------------------------------
 
-AJ
-aj@lkn.io | @ajlkn
+Here's a little about me:
 
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
+I'm addicted to technology and innovation. My first education is as an English language teacher, and I've always used technology and active methodologies in my teaching. When I started at the Education Department of Espírito Santo, I fell in love with data:
 
+I created the SIMPLER logic at the Education Department, along with the Planning Management, optimizing the existing instrument. Additionally, I developed an internal system of database and results, initially using Power BI, and then creating a more robust dashboard using Python and the StreamLit library (my current crush ❤️).
 
-Credits:
+Over the past year, I've rekindled my passion for programming and started applying Python and its libraries in personal and work projects.
 
-	Demo Images:
-		Unsplash (unsplash.com)
+Creditos:
 
-	Icons:
+	
+	Icones:
 		Font Awesome (fontawesome.io)
 
-	Other:
+	Outros:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
