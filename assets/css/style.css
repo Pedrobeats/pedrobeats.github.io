@@ -1,0 +1,106 @@
+/* --- Reset Básico & Variáveis --- */
+:root {
+    --bg-color: #F8F9FA;
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+    --border-color: #E9ECEF;
+    --accent-color: #007BFF;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 80px; /* Espaço para o header fixo */
+}
+
+/* --- Header & Navegação --- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(248, 249, 250, 0.85); /* Fundo com transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+.navigation-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    height: 80px;
+}
+.nav-logo { font-family: var(--font-heading); font-weight: 600; text-decoration: none; color: var(--text-primary); font-size: 1.5rem; }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--spacing-lg); }
+.nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* --- Seção Hero (Landing Page) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px); /* Altura da tela menos o header */
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+.hero-title { font-family: var(--font-heading); font-size: 3rem; font-weight: 600; margin: 0 0 var(--spacing-md); }
+.hero-subtitle { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-weight: 300; }
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #FFF;
+    padding: 12px 24px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2); }
+
+/* --- Layout de Página e Portfólio --- */
+.page-container { max-width: 1100px; margin: 0 auto; padding: var(--spacing-lg) var(--spacing-lg) 64px; }
+.page-title { font-family: var(--font-heading); font-size: 2.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-md); }
+.page-intro { font-size: 1.1rem; color: var(--text-secondary); max-width: 800px; }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--spacing-lg); margin-top: 48px; }
+.portfolio-card {
+    background-color: #FFF;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); }
+.card-visual img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.card-content { padding: var(--spacing-md); }
+.card-title { font-family: var(--font-heading); font-size: 1.25rem; margin: 0 0 8px; }
+.card-description { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--spacing-md); }
+.card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+
+/* --- Lista de Blog --- */
+.blog-post-list { list-style: none; padding: 0; margin-top: 48px; }
+.blog-post-item { padding: var(--spacing-lg) 0; border-bottom: 1px solid var(--border-color); }
+.post-meta { display: block; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px; }
+.post-title a { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-primary); text-decoration: none; }
+.post-title a:hover { color: var(--accent-color); }
+.post-excerpt { color: var(--text-secondary); }
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.2rem; }
+    .nav-links { display: none; /* Simplificar para um menu hamburguer em JS */ }
+}
