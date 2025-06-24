@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty | Pedro Moreno | Analista de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+    <nav class="navigation-menu">
+        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
+            <li><a href="/">Início</a></li>
+            <li><a href="/portfolio/">Portfólio</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main-content">
+        <article class="page-container">
+    
+    
+    <div class="post-hero-image">
+        <img src="/assets/images/blog/jornada-11ty-thumb.png" alt="Imagem de cabeçalho para o post Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty">
+    </div>
+    
+    
+    <header class="post-header">
+        <h1 class="page-title">Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty</h1>
+        
+        <p class="post-meta">Publicado em 19 de junho de 2025</p>
+        
+        
+            <p class="page-intro">Um relato sobre o processo de recriar meu site pessoal, os desafios enfrentados e o porquê de ter escolhido um gerador de site estático como o 11ty.</p>
+        
+
+        
+            <div class="post-tags">
+                
+                    <span class="tag-chip">Desenvolvimento Web</span>
+                
+                    <span class="tag-chip">11ty</span>
+                
+                    <span class="tag-chip">Site Estático</span>
+                
+                    <span class="tag-chip">Metodologia</span>
+                
+            </div>
+        
+    </header>
+
+    <div class="post-content">
+        <p>Se você está lendo isso, seja bem-vindo à nova versão do meu site! O que você vê hoje é o resultado de um processo que começou com uma ideia simples: a necessidade de ter um espaço online que fosse verdadeiramente meu (o que significa que ele não é um primor de front nem receberá prêmios de UX), fácil de manter e que refletisse melhor meu trabalho atual. Este post é a história dessa jornada.</p>
+<h3>O Ponto de Partida: Por que um Site Estático?</h3>
+<p>Meu site antigo cumpria seu papel, mas eu sentia que era hora de uma mudança. Eu queria uma plataforma onde pudesse não só exibir meu portfólio, mas também escrever e compartilhar ideias em um blog.</p>
+<p>A decisão de usar um <strong>gerador de site estático</strong> veio de dois lugares: primeiro, uma questão de <strong>praticidade</strong>. Eu não queria a complexidade de gerenciar um banco de dados, atualizações de plugins e as preocupações com segurança que vêm com sistemas mais robustos como o WordPress. Segundo, e sendo sincero, por uma percebida <strong>inabilidade</strong> minha em lidar com o front-end mais complexo que esses sistemas exigem. Eu precisava de algo que me permitisse focar no conteúdo.</p>
+<p>Foi aí que, após alguma pesquisa, eu descobri o <strong>11ty (Eleventy)</strong>.</p>
+<h3>O que é 11ty e Como Ele Funciona?</h3>
+<p>Imagine um robô muito eficiente. Você entrega a ele seus textos puros (escritos em Markdown, como este post), um conjunto de &quot;moldes&quot; (templates em HTML) e diz: &quot;combine tudo e construa meu site&quot;. É isso que o 11ty faz.</p>
+<p>Ele pega suas fontes de conteúdo, as processa através dos seus layouts e gera um conjunto de arquivos HTML, CSS e JavaScript puros. O resultado é um site incrivelmente rápido, seguro (porque não há banco de dados para invadir) e que pode ser hospedado em praticamente qualquer lugar, muitas vezes de graça.</p>
+<h3>A Montanha-Russa do Desenvolvimento: Desafios e Aprendizados</h3>
+<p>Nenhum projeto vem sem seus quebra-cabeças, e este não foi exceção. Cada erro, no entanto, foi uma aula. Durante o processo, passei por alguns desafios que valem a pena compartilhar:</p>
+<ul>
+<li>
+<p><strong>O Erro &quot;Cannot GET /portfolio/&quot;:</strong> Meu primeiro grande obstáculo. A página principal funcionava, mas a seção de portfólio não abria. Aprendi na prática como o 11ty mapeia os nomes de arquivo para URLs e que um arquivo chamado <code>index.njk</code> dentro de uma pasta é a chave para criar a página principal daquela seção.</p>
+</li>
+<li>
+<p><strong>A Saga da &quot;Invalid DateTime&quot;:</strong> Quando implementei a listagem do blog, as datas apareciam como &quot;Invalid DateTime&quot;. Isso me levou a uma jornada para entender como o 11ty e as bibliotecas de data funcionam. Tentamos usar a biblioteca Luxon, enfrentamos erros com o formato da data no Markdown (<code>YYYY-MM-DD</code> é o caminho!) e, finalmente, chegamos a uma solução elegante usando funções nativas do JavaScript (<code>toLocaleDateString</code>), que além de resolver o problema, deixou o site mais leve.</p>
+</li>
+<li>
+<p><strong>Conflitos e Páginas em Branco:</strong> Houve momentos em que uma página simplesmente aparecia em branco. Isso me ensinou sobre a importância da variável <code></code> nos arquivos de layout – a instrução mágica que diz ao 11ty &quot;coloque o conteúdo do meu post bem aqui&quot;.</p>
+</li>
+</ul>
+<h3>Os Pontos Positivos e a &quot;Nova Era de Conteúdo&quot;</h3>
+<p>Apesar dos desafios, o processo foi incrivelmente gratificante. A cada erro solucionado, eu não estava apenas consertando o site, mas entendendo mais profundamente como a ferramenta 11ty funciona. O resultado é um site que eu não apenas uso, mas que eu realmente compreendo.</p>
+<p>E a melhor parte? <strong>A praticidade que eu tanto buscava.</strong></p>
+<p>Agora, para escrever um novo post no blog ou adicionar um novo projeto ao portfólio, meu fluxo de trabalho é absurdamente simples:</p>
+<ol>
+<li>Abro minha pasta de projetos.</li>
+<li>Crio um novo arquivo de texto simples (<code>.md</code>).</li>
+<li>Escrevo o conteúdo, sem me preocupar com editores complexos ou painéis de administração.</li>
+<li>O 11ty automaticamente reconstrói o site com o novo conteúdo.</li>
+<li>Git commit.</li>
+</ol>
+<p>É o poder de criar conteúdo de forma ágil e focada. Espero que essa nova plataforma me permita compartilhar muito mais insights, tutoriais e reflexões com vocês.</p>
+<p>O futuro é promissor, e estou ansioso para construir sobre esta nova base, que me permite escrever posts de blog mais rapidamente.</p>
+
+    </div>
+
+</article>
+    </main>
+
+    <footer class="site-footer">
+    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
+    <p>
+        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
+        <a href="https://github.com/Pedrobeats">GitHub</a>
+    </p>
+</footer>
+</body>
+</html>

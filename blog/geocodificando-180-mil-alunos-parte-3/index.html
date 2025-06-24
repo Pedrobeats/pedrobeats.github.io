@@ -1,0 +1,36 @@
+<p>Chegamos ao final do processo.</p>
+<p>Se você não leu as partes anteriores clique aqui:
+No <a href="./geocodificando-180-mil-alunos-parte-1">primeiro post</a>, combinamos Nominatim e OpenCage para obter coordenadas. Mas isso ainda era <strong>ineficiente</strong> para 180 mil alunos.</p>
+<p>No <a href="./geocodificando-180-mil-alunos-parte-2">segundo post</a>, adicionamos o GoogleV3 à equação para alguns endereços mais complicados e fizemos uma maneira para salvar esse dados.</p>
+<p>Agora depois que já estava testando e salvando os dados para valer, percebemos alguns detalhes que deixamos passar nos testes menores:</p>
+<p>Para começar, depois de combinar APIs e usar cache de arquivo, ainda havia um risco: <strong>a cota de uma API acabar durante a execução</strong>.</p>
+<h2>Versão 6: Controle dinâmico com arquivos de flag</h2>
+<p>Criamos um <strong>painel invisível</strong> usando arquivos <code>.flag</code> para ativar ou desativar APIs <strong>sem parar o script</strong>:</p>
+<pre><code class="language-python">FLAG_OPEN_CAGE_DISABLE = 'disable_opencage.flag'
+
+def update_geolocators_order_by_flags():
+    if os.path.exists(FLAG_OPEN_CAGE_DISABLE):
+        use_opencage = False
+    else:
+        use_opencage = True
+</code></pre>
+<p>Como não era necessário fazer nenhum tipo de frontend sofisticado, implementamos uma lógica simples: Se o arquivo estiver presente no diretório raiz, a API é desabilitada. Desta maneira ficou possivel desabilitar o Opencage quando ele atingisse sua cota e usar o Google Maps apenas nos casos mais complicados, pois ele é o serviço mais caro. Lembrando que meu desafio e meta inicial era fazer tudo 100% 0800.</p>
+<h3>Cache de Sessão: Evitando repetição no mesmo script</h3>
+<p>Mesmo com cache de arquivo, alguns endereços apareciam mais de uma vez na mesma execução. Só percebi tarde demais que esses endereços estavam sendo perdidos (e desperdiçando requisições de API). A solução foi o <strong>cache em memória</strong> (sessão):</p>
+<pre><code class="language-python">session_geocoding_cache = {}
+
+if address in session_geocoding_cache:
+    return session_geocoding_cache[address]
+
+location = geolocator.geocode(address)
+session_geocoding_cache[address] = (location.latitude, location.longitude)
+</code></pre>
+<h2>✅ Resultado final</h2>
+<ul>
+<li>180 mil alunos georreferenciados</li>
+<li>Zero custos.</li>
+<li>Controle dinâmico e reaproveitamento total de dados nas requisições de API.</li>
+</ul>
+<p>Essa jornada me ensinou muito sobre desenvolvimento iterativo, automação e criatividade com recursos limitados. Acho que é isso.</p>
+<p>devido o código ser muito voltado para a base de dados do Espirito Santo, não faz muito sentido liberar todo o código via Github, no entanto se quiser adaptar esse projeto para sua realidade, entre em contato!</p>
+<p>Até a próxima.</p>

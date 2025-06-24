@@ -1,0 +1,33 @@
+<p>No <a href="./geocodificando-180-mil-alunos-parte-1">primeiro post</a>, combinamos Nominatim e OpenCage para obter coordenadas. Mas isso ainda era <strong>ineficiente</strong> para 180 mil alunos.</p>
+<h2>Versão 3: Um terceiro geocodificador e barra de progresso</h2>
+<p>Adicionamos o <strong>GoogleV3</strong> à equação. Verificamos que mesmo com dois serviços de Geolocalização/Geocodificação, existem endereços (especialmente no interior do Estado) que só o Google Maps encontra. Além disso quando o Google Maps não encontra o endereço exato ele retorna geodados aproximados, que no nosso caso já são o suficiente (até mesmo porque até então a alternativa era não ter dado nenhum) e uma <strong>barra de progresso</strong> com <code>tqdm</code>.</p>
+<p>Mesmo que não mude muita coisa no processo, mas uma barra de status mais funcional ajuda a depurar onde está o erro ou qual o status do script. Via de regra, sempre vou de <code>tdqm</code>:</p>
+<pre><code class="language-python">from geopy.geocoders import GoogleV3
+from tqdm.notebook import tqdm
+
+geolocator_google = GoogleV3(api_key=&quot;CHAVE_DO_GOOGLE&quot;)
+
+geolocators = [(&quot;Nominatim&quot;, geolocator_nominatim), 
+               (&quot;OpenCage&quot;, geolocator_opencage), 
+               (&quot;GoogleV3&quot;, geolocator_google)]
+
+for index, row in tqdm(df.iterrows(), total=len(df)):
+    for name, locator in geolocators:
+        latlon = locator.geocode(row['endereco'])
+        if latlon:
+            break
+</code></pre>
+<h2>Versão 4 e 5: A revolução do cache em arquivo</h2>
+<p>Terminada a fase de validação da ideia, passei então a rodar o script com os dados completos, pois para fim de teste estava usando uma dataframe reduzida com uma amostra aleatória dos 180 mil estudantes da rede.</p>
+<p>Bom, começando com o mais óbvio: Devido a limitação das APIs gratuitas não seria possível geocodificar todos os alunos de uma vez. Então todos os dados geocodificados do script era &quot;esquecido&quot;. A cada execução, ele repetia os mesmos pedidos para as APIs.</p>
+<p>A solução? <strong>Salvar as coordenadas encontradas</strong> num arquivo e <strong>consultá-lo antes</strong> de chamar as APIs:</p>
+<pre><code class="language-python">if os.path.exists(&quot;dados_alunos_geocodificados.xlsx&quot;):
+    df_cache = pd.read_excel(&quot;dados_alunos_geocodificados.xlsx&quot;)
+    cache = {
+        (row['id_aluno'], row['endereco']): (row['LATITUDE'], row['LONGITUDE'])
+        for _, row in df_cache.iterrows()
+    }
+</code></pre>
+<p>Com isso, o script ficou <strong>muito mais eficiente</strong>. Se parássemos no meio, podíamos retomar depois sem perder o que já havia sido feito. O que já era suficiente para terminar a tarefa.</p>
+<p>Passaremos agora para melhorias de qualidade de vida e algumas otimizações que foram feitas após os primeiros testes com dados reais.</p>
+<p>No próximo post, vamos mostrar como o script ganhou <strong>controle em tempo real</strong> e <strong>cache em memória</strong>.</p>

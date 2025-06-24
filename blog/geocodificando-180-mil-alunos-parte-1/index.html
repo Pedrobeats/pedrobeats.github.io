@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1) | Pedro Moreno | Analista de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+    <nav class="navigation-menu">
+        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
+            <li><a href="/">Início</a></li>
+            <li><a href="/portfolio/">Portfólio</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main-content">
+        <article class="page-container">
+    
+    
+    
+    <header class="post-header">
+        <h1 class="page-title">Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1)</h1>
+        
+        <p class="post-meta">Publicado em 05 de setembro de 2026</p>
+        
+        
+
+        
+            <div class="post-tags">
+                
+                    <span class="tag-chip">geocodificação</span>
+                
+                    <span class="tag-chip">python</span>
+                
+                    <span class="tag-chip">planejamento escolar</span>
+                
+                    <span class="tag-chip">dados educacionais</span>
+                
+            </div>
+        
+    </header>
+
+    <div class="post-content">
+        <p>Olá, pessoal! Bem-vindos ao meu (pelas minhas contas, 7º ou 8º) blog.</p>
+<p>Hoje, quero contar o começo de um projeto real que vivemos aqui na Gerência de Planejamento da Secretaria de Educação do Espírito Santo. Nossa missão: transformar o endereço de <strong>mais de 180 mil alunos</strong> em coordenadas geográficas.</p>
+<h2>O Desafio: Muito dado, zero orçamento</h2>
+<p>Para qualquer estudo tecnico realizado — avaliação de contrução ou ampliação de escolas, aquisicão de terrenos, entre outros estudos realizados na GEPLAN — saber onde os alunos moram é essencial. Mas tínhamos um problema: só possuíamos os <strong>endereços textuais</strong>, sem nenhuma coordenada.</p>
+<p>E o mais desafiador: por ser um projeto pequeno e independente <strong>não poderiamos gastar nenhum centavo</strong>. Precisávamos usar <strong>apenas ferramentas gratuitas</strong> ou dentro das cotas free das APIs.</p>
+<h2>Versão 1: O &quot;Olá, Mundo&quot; da geocodificação</h2>
+<p>Como nunca tinhamos feito isso antes, começamos com o básico. O <a href="https://nominatim.org/">Nominatim</a> é um serviço/API, que baseado em OpenStreetMap, foi nosso primeiro passo na geocodificação. Usamos a biblioteca <code>geopy</code> com o seguinte esqueleto:</p>
+<pre><code class="language-python">from geopy.geocoders import Nominatim
+import pandas as pd
+import time
+
+geolocator = Nominatim(user_agent=&quot;my_geocoding_script&quot;)
+
+def geocode_address(address):
+    time.sleep(1)  # Respeitando a política do Nominatim, que autoriza uso ilimitado desde que dentro de 1 requisição por segundo.
+    location = geolocator.geocode(address)
+    if location:
+        return location.latitude, location.longitude
+    return None, None
+</code></pre>
+<p>Esse script buscava os dados da planilha, construía o endereço completo com <code>rua</code>, <code>número</code>, <code>bairro</code>, <code>município</code>, e enviava para o Nominatim. Funcionava... até que não.</p>
+<p>O Nominatim é gratuito, mas lento e instável sob carga. Percebi que confiar em um único serviço era <strong>frágil</strong>.</p>
+<h2>Versão 2: Fallback com OpenCage</h2>
+<p>A solução? Um <strong>Plano B</strong>. Se o Nominatim falhasse, tentávamos o <a href="https://opencagedata.com/">OpenCage</a>. O OpenCage é um serviço de API para geocodificação que se destaca por oferecer um plano gratuito generoso. Para usá-lo, é preciso obter uma chave de API em seu site, o opencagedata.com. Ele funciona como uma alternativa rápida e confiável, sendo o &quot;Plano B&quot; ideal em nosso projeto quando o Nominatim falhava:</p>
+<pre><code class="language-python">from geopy.geocoders import OpenCage
+
+geolocator_opencage = OpenCage(api_key=&quot;A_CHAVE_QUE_PEGAMOS_NO_SITE&quot;)
+
+def geocode_with_fallback(address):
+    try:
+        return geocode_address(address)
+    except:
+        return geolocator_opencage.geocode(address)
+</code></pre>
+<p>Com isso, o processo ficou mais robusto. Mas ainda não era suficiente para escalar para 180 mil alunos.</p>
+<p>No próximo post, vamos ver como o uso de cache mudou tudo.</p>
+
+    </div>
+
+</article>
+    </main>
+
+    <footer class="site-footer">
+    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
+    <p>
+        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
+        <a href="https://github.com/Pedrobeats">GitHub</a>
+    </p>
+</footer>
+</body>
+</html>
