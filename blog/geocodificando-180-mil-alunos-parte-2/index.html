@@ -1,4 +1,56 @@
-<p>No <a href="./geocodificando-180-mil-alunos-parte-1">primeiro post</a>, combinamos Nominatim e OpenCage para obter coordenadas. Mas isso ainda era <strong>ineficiente</strong> para 180 mil alunos.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocodificando 180 Mil Alunos - O Poder do Cache e dos Planos B (Parte 2) | Pedro Moreno | Analista de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+    <nav class="navigation-menu">
+        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
+            <li><a href="/">Início</a></li>
+            <li><a href="/portfolio/">Portfólio</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main-content">
+        <article class="page-container">
+    
+    
+    
+    <header class="post-header">
+        <h1 class="page-title">Geocodificando 180 Mil Alunos - O Poder do Cache e dos Planos B (Parte 2)</h1>
+        
+        <p class="post-meta">Publicado em 05 de junho de 2026</p>
+        
+        
+
+        
+            <div class="post-tags">
+                
+                    <span class="tag-chip">geocodificação</span>
+                
+                    <span class="tag-chip">dados</span>
+                
+                    <span class="tag-chip">cache</span>
+                
+                    <span class="tag-chip">fallback</span>
+                
+            </div>
+        
+    </header>
+
+    <div class="post-content">
+        <p>No <a href="./geocodificando-180-mil-alunos-parte-1">primeiro post</a>, combinamos Nominatim e OpenCage para obter coordenadas. Mas isso ainda era <strong>ineficiente</strong> para 180 mil alunos.</p>
 <h2>Versão 3: Um terceiro geocodificador e barra de progresso</h2>
 <p>Adicionamos o <strong>GoogleV3</strong> à equação. Verificamos que mesmo com dois serviços de Geolocalização/Geocodificação, existem endereços (especialmente no interior do Estado) que só o Google Maps encontra. Além disso quando o Google Maps não encontra o endereço exato ele retorna geodados aproximados, que no nosso caso já são o suficiente (até mesmo porque até então a alternativa era não ter dado nenhum) e uma <strong>barra de progresso</strong> com <code>tqdm</code>.</p>
 <p>Mesmo que não mude muita coisa no processo, mas uma barra de status mais funcional ajuda a depurar onde está o erro ou qual o status do script. Via de regra, sempre vou de <code>tdqm</code>:</p>
@@ -31,3 +83,18 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
 <p>Com isso, o script ficou <strong>muito mais eficiente</strong>. Se parássemos no meio, podíamos retomar depois sem perder o que já havia sido feito. O que já era suficiente para terminar a tarefa.</p>
 <p>Passaremos agora para melhorias de qualidade de vida e algumas otimizações que foram feitas após os primeiros testes com dados reais.</p>
 <p>No próximo post, vamos mostrar como o script ganhou <strong>controle em tempo real</strong> e <strong>cache em memória</strong>.</p>
+
+    </div>
+
+</article>
+    </main>
+
+    <footer class="site-footer">
+    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
+    <p>
+        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
+        <a href="https://github.com/Pedrobeats">GitHub</a>
+    </p>
+</footer>
+</body>
+</html>
