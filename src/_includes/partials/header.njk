@@ -1,0 +1,21 @@
+<header class="site-header">
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" {% if page.url == "/" %}class="active" aria-current="page"{% endif %}>Início</a></li>
+            <li><a href="/portfolio/" {% if "/portfolio" in page.url %}class="active" aria-current="page"{% endif %}>Portfólio</a></li>
+            <li><a href="/blog/" {% if "/blog" in page.url %}class="active" aria-current="page"{% endif %}>Blog</a></li>
+            <li><a href="/sobre/" {% if "/sobre" in page.url %}class="active" aria-current="page"{% endif %}>Sobre</a></li>
+            <li><a href="/contato/" {% if "/contato" in page.url %}class="active" aria-current="page"{% endif %}>Contato</a></li>
+        </ul>
+    </nav>
+</header>

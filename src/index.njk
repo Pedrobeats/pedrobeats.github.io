@@ -1,0 +1,149 @@
+---
+layout: "layouts/base.njk"
+title: "Início"
+---
+
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Analista & Cientista de Dados • SEDU-ES</span>
+        </div>
+
+        <h1 class="hero-title">
+            Transformando dados em <span class="gradient-text">insights estratégicos</span> e automação inteligente.
+        </h1>
+
+        <p class="hero-subtitle">
+            Olá, sou <strong>Pedro Moreno</strong>. Desenvolvo pipelines de dados, modelos analíticos, dashboards e aplicações interativas em Python e Streamlit para transformar processos complexos em soluções ágeis e eficientes.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/portfolio/" class="btn btn-primary">
+                Ver Portfólio
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="/blog/" class="btn btn-secondary">
+                Ler o Blog
+            </a>
+            <a href="/sobre/" class="btn btn-ghost">
+                Sobre Mim →
+            </a>
+        </div>
+
+        <div class="tech-stack-strip">
+            <span class="tech-stack-label">Stack & Ferramentas:</span>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Tableau</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Geocodificação</span>
+                <span class="tech-tag">SQL</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Projetos em Destaque -->
+<section class="section-home">
+    <div class="section-header">
+        <div>
+            <span class="section-eyebrow">Trabalho Prático</span>
+            <h2 class="section-title">Projetos em Destaque</h2>
+        </div>
+        <a href="/portfolio/" class="section-link">Ver todo o portfólio →</a>
+    </div>
+
+    <div class="portfolio-grid">
+        {%- for project in collections.portfolio | limit(3) -%}
+        <article class="portfolio-card">
+            {%- if project.data.thumbnail -%}
+            <a href="{{ project.url }}" class="card-visual">
+                <img src="{{ project.data.thumbnail }}" alt="Imagem do projeto {{ project.data.title }}" loading="lazy">
+            </a>
+            {%- endif -%}
+            <div class="card-content">
+                {% if project.data.tags %}
+                <div class="card-tags">
+                    {% for tag in project.data.tags %}
+                        <span class="tag-chip">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <h3 class="card-title">
+                    <a href="{{ project.url }}">{{ project.data.title }}</a>
+                </h3>
+                
+                <p class="card-description">{{ project.data.description }}</p>
+                
+                <a href="{{ project.url }}" class="card-link">
+                    Explorar projeto 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+</section>
+
+<!-- Seção de Posts Recentes -->
+<section class="section-home section-alt">
+    <div class="section-header">
+        <div>
+            <span class="section-eyebrow">Publicações & Reflexões</span>
+            <h2 class="section-title">Últimos Artigos do Blog</h2>
+        </div>
+        <a href="/blog/" class="section-link">Ver todos os artigos →</a>
+    </div>
+
+    <div class="post-cards-grid">
+        {%- for post in collections.blog | limit(3) -%}
+        <article class="post-card">
+            {%- if post.data.thumbnail -%}
+            <a href="{{ post.url }}" class="post-card-thumb">
+                <img src="{{ post.data.thumbnail }}" alt="Thumbnail para {{ post.data.title }}" loading="lazy">
+            </a>
+            {%- endif -%}
+            <div class="post-card-body">
+                <div class="post-card-meta">
+                    <span class="post-date">{{ post.data.date | brDate }}</span>
+                    <span class="meta-dot">•</span>
+                    <span class="post-read">{{ post.templateContent | readingTime }}</span>
+                </div>
+
+                <h3 class="post-card-title">
+                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                </h3>
+
+                {% if post.data.description %}
+                    <p class="post-card-excerpt">{{ post.data.description }}</p>
+                {% endif %}
+
+                {% if post.data.tags %}
+                <div class="post-card-tags">
+                    {% for tag in post.data.tags %}
+                        <span class="tag-chip tag-chip-sm">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+</section>
+
+<!-- Banner de Conexão -->
+<section class="connect-banner">
+    <div class="connect-banner-inner">
+        <h2>Pronto para conversar sobre dados ou projetos?</h2>
+        <p>Sinta-se à vontade para me mandar uma mensagem ou acompanhar meus projetos nas redes.</p>
+        <div class="connect-banner-actions">
+            <a href="/contato/" class="btn btn-primary">Entrar em Contato</a>
+            <a href="{{ site.linkedin }}" target="_blank" rel="noopener" class="btn btn-secondary">Conectar no LinkedIn</a>
+        </div>
+    </div>
+</section>

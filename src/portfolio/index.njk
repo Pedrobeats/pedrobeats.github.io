@@ -1,0 +1,46 @@
+---
+layout: "layouts/base.njk"
+title: "Portfólio"
+description: "Projetos em análise de dados, automação, machine learning e dashboards interativos."
+---
+
+<div class="page-container">
+    <header class="page-header">
+        <h1 class="page-title">Portfólio de Projetos</h1>
+        <p class="page-intro">Uma seleção de projetos práticos demonstrando habilidades em análise de dados, engenharia analítica, machine learning e visualização interativa com foco em soluções reais.</p>
+    </header>
+
+    <div class="portfolio-grid">
+        {%- for project in collections.portfolio -%}
+        <article class="portfolio-card">
+            {%- if project.data.thumbnail -%}
+            <a href="{{ project.url }}" class="card-visual">
+                <img src="{{ project.data.thumbnail }}" alt="Visualização de {{ project.data.title }}" loading="lazy">
+            </a>
+            {%- endif -%}
+            <div class="card-content">
+                {% if project.data.tags %}
+                    <div class="card-tags">
+                        {% for tag in project.data.tags %}
+                            <span class="tag-chip">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <h2 class="card-title">
+                    <a href="{{ project.url }}">{{ project.data.title }}</a>
+                </h2>
+                
+                <p class="card-description">{{ project.data.description }}</p>
+                
+                <div class="card-actions">
+                    <a href="{{ project.url }}" class="card-link">
+                        Ver detalhes do projeto
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+</div>

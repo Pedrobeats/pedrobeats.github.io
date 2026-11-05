@@ -1,0 +1,21 @@
+{
+  "name": "pedrobeats.github.io",
+  "version": "1.0.0",
+  "description": "Site pessoal, portfólio e blog de Pedro Moreno",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [
+    "11ty",
+    "portfolio",
+    "blog",
+    "data-science"
+  ],
+  "author": "Pedro Moreno",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.1"
+  }
+}
