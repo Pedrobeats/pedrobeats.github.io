@@ -3,39 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1) | Pedro Moreno | Analista de Dados</title>
+    <title>Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1) | Pedro Moreno | Analista &amp; Cientista de Dados</title>
+    
+    <meta name="description" content="Como transformamos mais de 180 mil endereços textuais de estudantes em coordenadas geográficas usando apenas ferramentas abertas e gratuitas.">
+    <meta name="author" content="Pedro Moreno">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1) | Pedro Moreno | Analista &amp; Cientista de Dados">
+    <meta property="og:description" content="Como transformamos mais de 180 mil endereços textuais de estudantes em coordenadas geográficas usando apenas ferramentas abertas e gratuitas.">
+    <meta property="og:url" content="https://pedrobeats.github.io/blog/geocodificando-180-mil-alunos-parte-1/">
+    
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 </head>
-<body>
+<body class="site-body">
     <header class="site-header">
-    <nav class="navigation-menu">
-        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/portfolio/">Portfólio</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/sobre/">Sobre</a></li>
-            <li><a href="/contato/">Contato</a></li>
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" >Início</a></li>
+            <li><a href="/portfolio/" >Portfólio</a></li>
+            <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
+            <li><a href="/sobre/" >Sobre</a></li>
+            <li><a href="/contato/" >Contato</a></li>
         </ul>
     </nav>
 </header>
 
-    <main class="main-content">
-        <article class="page-container">
-    
-    
-    
-    <header class="post-header">
-        <h1 class="page-title">Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1)</h1>
-        
-        <p class="post-meta">Publicado em 05 de novembro de 2025</p>
-        
-        
 
+    <main class="main-content" id="main-content">
+        <article class="article-container">
+    <nav class="article-breadcrumb" aria-label="Navegação de retorno">
         
-            <div class="post-tags">
+            <a href="/blog/" class="breadcrumb-link">← Voltar para o Blog</a>
+        
+    </nav>
+
+    
+
+    <header class="article-header">
+        
+            <div class="article-tags">
                 
                     <span class="tag-chip">geocodificação</span>
                 
@@ -47,9 +74,29 @@
                 
             </div>
         
+
+        <h1 class="article-title">Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1)</h1>
+
+        <div class="article-meta-bar">
+            
+                <span class="meta-item meta-date">
+                    <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    06 de novembro de 2025
+                </span>
+            
+
+            <span class="meta-item meta-reading-time">
+                <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                2 min de leitura
+            </span>
+        </div>
+
+        
+            <p class="article-intro">Como transformamos mais de 180 mil endereços textuais de estudantes em coordenadas geográficas usando apenas ferramentas abertas e gratuitas.</p>
+        
     </header>
 
-    <div class="post-content">
+    <div class="article-content">
         <p>Olá, pessoal! Bem-vindos ao meu (pelas minhas contas, 7º ou 8º) blog.</p>
 <p>Hoje, quero contar o começo de um projeto real que vivemos aqui na Gerência de Planejamento da Secretaria de Educação do Espírito Santo. Nossa missão: transformar o endereço de <strong>mais de 180 mil alunos</strong> em coordenadas geográficas.</p>
 <h2>O Desafio: Muito dado, zero orçamento</h2>
@@ -89,15 +136,45 @@ def geocode_with_fallback(address):
 
     </div>
 
+    <footer class="article-footer">
+        <div class="article-share-cta">
+            <p>Gostou ou tem dúvidas sobre este conteúdo? Conecte-se comigo no <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener">LinkedIn</a> ou veja outros projetos no <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        
+        <div class="article-nav-back">
+            
+                <a href="/blog/" class="btn btn-secondary">← Ver todos os artigos</a>
+            
+        </div>
+    </footer>
 </article>
+
     </main>
 
     <footer class="site-footer">
-    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
-    <p>
-        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
-        <a href="https://github.com/Pedrobeats">GitHub</a>
-    </p>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">PM<span class="logo-dot">.</span></a>
+            <p class="footer-tagline">Ciência de Dados, Engenharia Analítica e Automação.</p>
+        </div>
+
+        <div class="footer-links">
+            <span class="footer-label">Conecte-se:</span>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:pedromsantanna@gmail.com">E-mail</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Pedro Moreno. Todos os direitos reservados.</p>
+        <p class="footer-tech">Construído com <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a></p>
+    </div>
 </footer>
+
+
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

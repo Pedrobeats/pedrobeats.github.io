@@ -3,39 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio | Pedro Moreno | Analista de Dados</title>
+    <title>Portfólio | Pedro Moreno | Analista &amp; Cientista de Dados</title>
+    
+    <meta name="description" content="Projetos em análise de dados, automação, machine learning e dashboards interativos.">
+    <meta name="author" content="Pedro Moreno">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfólio | Pedro Moreno | Analista &amp; Cientista de Dados">
+    <meta property="og:description" content="Projetos em análise de dados, automação, machine learning e dashboards interativos.">
+    <meta property="og:url" content="https://pedrobeats.github.io/portfolio/">
+    
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 </head>
-<body>
+<body class="site-body">
     <header class="site-header">
-    <nav class="navigation-menu">
-        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/portfolio/">Portfólio</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/sobre/">Sobre</a></li>
-            <li><a href="/contato/">Contato</a></li>
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" >Início</a></li>
+            <li><a href="/portfolio/" class="active" aria-current="page">Portfólio</a></li>
+            <li><a href="/blog/" >Blog</a></li>
+            <li><a href="/sobre/" >Sobre</a></li>
+            <li><a href="/contato/" >Contato</a></li>
         </ul>
     </nav>
 </header>
 
-    <main class="main-content">
-        <div class="page-container">
-    <h1 class="page-title">Portfólio de Projetos</h1>
-    <p class="page-intro">Aqui estão alguns dos projetos em que trabalhei, demonstrando minhas habilidades em análise de dados, machine learning e visualização.</p>
 
-    <div class="portfolio-grid"><div class="portfolio-card">
-            <div class="card-visual">
-                <img src="/assets/images/thumbs/thumb-automacao-sedues.jpg" alt="Visualização do Automatizador de Diagnóstico e Planejamento da Rede (SEDU-ES)">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Automatizador de Diagnóstico e Planejamento da Rede (SEDU-ES)</h3>
-                <p class="card-description">Aplicação em Python que automatiza a coleta e análise de dados para a Secretaria de Educação do Espírito Santo, otimizando o planejamento educacional.</p>
+    <main class="main-content" id="main-content">
+        
+<div class="page-container">
+    <header class="page-header">
+        <h1 class="page-title">Portfólio de Projetos</h1>
+        <p class="page-intro">Uma seleção de projetos práticos demonstrando habilidades em análise de dados, engenharia analítica, machine learning e visualização interativa com foco em soluções reais.</p>
+    </header>
+
+    <div class="portfolio-grid"><article class="portfolio-card"><a href="/portfolio/painel-tempo-integral/" class="card-visual">
+                <img src="/assets/images/thumbs/pic02.jpg" alt="Visualização de Painel de Informações do Tempo Integral do Espírito Santo" loading="lazy">
+            </a><div class="card-content">
                 
-                    <div class="post-tags" style="margin-bottom: 16px;">
+                    <div class="card-tags">
+                        
+                            <span class="tag-chip">Python</span>
+                        
+                            <span class="tag-chip">Streamlit</span>
+                        
+                            <span class="tag-chip">Pandas</span>
+                        
+                            <span class="tag-chip">Análise de Dados</span>
+                        
+                    </div>
+                
+                
+                <h2 class="card-title">
+                    <a href="/portfolio/painel-tempo-integral/">Painel de Informações do Tempo Integral do Espírito Santo</a>
+                </h2>
+                
+                <p class="card-description">Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.</p>
+                
+                <div class="card-actions">
+                    <a href="/portfolio/painel-tempo-integral/" class="card-link">
+                        Ver detalhes do projeto
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </article><article class="portfolio-card"><a href="/portfolio/dashboard-power-bi/" class="card-visual">
+                <img src="/assets/images/thumbs/pic01.jpg" alt="Visualização de Dashboard de Escolas em Tempo Integral no Power BI" loading="lazy">
+            </a><div class="card-content">
+                
+                    <div class="card-tags">
+                        
+                            <span class="tag-chip">Power BI</span>
+                        
+                            <span class="tag-chip">Coleta de Dados</span>
+                        
+                            <span class="tag-chip">Visualização de Dados</span>
+                        
+                    </div>
+                
+                
+                <h2 class="card-title">
+                    <a href="/portfolio/dashboard-power-bi/">Dashboard de Escolas em Tempo Integral no Power BI</a>
+                </h2>
+                
+                <p class="card-description">Dashboard feito coletando e desenhando manualmente a base de dados das escolas em tempo integral do Espírito Santo.</p>
+                
+                <div class="card-actions">
+                    <a href="/portfolio/dashboard-power-bi/" class="card-link">
+                        Ver detalhes do projeto
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </article><article class="portfolio-card"><a href="/portfolio/analise-terceira-ponte/" class="card-visual">
+                <img src="/assets/images/thumbs/pic03.jpg" alt="Visualização de Análise de Dados sobre o Pedágio da Terceira Ponte" loading="lazy">
+            </a><div class="card-content">
+                
+                    <div class="card-tags">
+                        
+                            <span class="tag-chip">Web Scraping</span>
+                        
+                            <span class="tag-chip">Python</span>
+                        
+                            <span class="tag-chip">Tableau</span>
+                        
+                            <span class="tag-chip">Análise de Dados</span>
+                        
+                    </div>
+                
+                
+                <h2 class="card-title">
+                    <a href="/portfolio/analise-terceira-ponte/">Análise de Dados sobre o Pedágio da Terceira Ponte</a>
+                </h2>
+                
+                <p class="card-description">Webscrapper feito em Python e Dashboard feito no Tableau Public para analisar os dados do pedágio.</p>
+                
+                <div class="card-actions">
+                    <a href="/portfolio/analise-terceira-ponte/" class="card-link">
+                        Ver detalhes do projeto
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </article><article class="portfolio-card"><a href="/portfolio/automacao-sedues/" class="card-visual">
+                <img src="/assets/images/thumbs/thumb-automacao-sedues.jpg" alt="Visualização de Automatizador de Diagnóstico e Planejamento da Rede (SEDU-ES)" loading="lazy">
+            </a><div class="card-content">
+                
+                    <div class="card-tags">
                         
                             <span class="tag-chip">Python</span>
                         
@@ -52,85 +167,48 @@
                     </div>
                 
                 
-                <a href="/portfolio/automacao-sedues/" class="card-link">Ver detalhes →</a>
+                <h2 class="card-title">
+                    <a href="/portfolio/automacao-sedues/">Automatizador de Diagnóstico e Planejamento da Rede (SEDU-ES)</a>
+                </h2>
+                
+                <p class="card-description">Aplicação em Python que automatiza a coleta e análise de dados para a Secretaria de Educação do Espírito Santo, otimizando o planejamento educacional.</p>
+                
+                <div class="card-actions">
+                    <a href="/portfolio/automacao-sedues/" class="card-link">
+                        Ver detalhes do projeto
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
             </div>
-        </div><div class="portfolio-card">
-            <div class="card-visual">
-                <img src="/assets/images/thumbs/pic03.jpg" alt="Visualização do Análise de Dados sobre o Pedágio da Terceira Ponte">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Análise de Dados sobre o Pedágio da Terceira Ponte</h3>
-                <p class="card-description">Webscrapper feito em Python e Dashboard feito no Tableau Public para analisar os dados do pedágio.</p>
-                
-                    <div class="post-tags" style="margin-bottom: 16px;">
-                        
-                            <span class="tag-chip">Web Scraping</span>
-                        
-                            <span class="tag-chip">Python</span>
-                        
-                            <span class="tag-chip">Tableau</span>
-                        
-                            <span class="tag-chip">Análise de Dados</span>
-                        
-                    </div>
-                
-                
-                <a href="/portfolio/analise-terceira-ponte/" class="card-link">Ver detalhes →</a>
-            </div>
-        </div><div class="portfolio-card">
-            <div class="card-visual">
-                <img src="/assets/images/thumbs/pic01.jpg" alt="Visualização do Dashboard de Escolas em Tempo Integral no Power BI">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Dashboard de Escolas em Tempo Integral no Power BI</h3>
-                <p class="card-description">Dashboard feito coletando e desenhando manualmente a base de dados das escolas em tempo integral do Espírito Santo.</p>
-                
-                    <div class="post-tags" style="margin-bottom: 16px;">
-                        
-                            <span class="tag-chip">Power BI</span>
-                        
-                            <span class="tag-chip">Coleta de Dados</span>
-                        
-                            <span class="tag-chip">Visualização de Dados</span>
-                        
-                    </div>
-                
-                
-                <a href="/portfolio/dashboard-power-bi/" class="card-link">Ver detalhes →</a>
-            </div>
-        </div><div class="portfolio-card">
-            <div class="card-visual">
-                <img src="/assets/images/thumbs/pic02.jpg" alt="Visualização do Painel de Informações do Tempo Integral do Espírito Santo">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Painel de Informações do Tempo Integral do Espírito Santo</h3>
-                <p class="card-description">Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.</p>
-                
-                    <div class="post-tags" style="margin-bottom: 16px;">
-                        
-                            <span class="tag-chip">Python</span>
-                        
-                            <span class="tag-chip">Streamlit</span>
-                        
-                            <span class="tag-chip">Pandas</span>
-                        
-                            <span class="tag-chip">Análise de Dados</span>
-                        
-                    </div>
-                
-                
-                <a href="/portfolio/painel-tempo-integral/" class="card-link">Ver detalhes →</a>
-            </div>
-        </div></div>
+        </article></div>
 </div>
+
     </main>
 
     <footer class="site-footer">
-    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
-    <p>
-        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
-        <a href="https://github.com/Pedrobeats">GitHub</a>
-    </p>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">PM<span class="logo-dot">.</span></a>
+            <p class="footer-tagline">Ciência de Dados, Engenharia Analítica e Automação.</p>
+        </div>
+
+        <div class="footer-links">
+            <span class="footer-label">Conecte-se:</span>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:pedromsantanna@gmail.com">E-mail</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Pedro Moreno. Todos os direitos reservados.</p>
+        <p class="footer-tech">Construído com <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a></p>
+    </div>
 </footer>
+
+
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

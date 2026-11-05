@@ -3,45 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty | Pedro Moreno | Analista de Dados</title>
+    <title>Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty | Pedro Moreno | Analista &amp; Cientista de Dados</title>
+    
+    <meta name="description" content="Um relato sobre o processo de recriar meu site pessoal, os desafios enfrentados e o porquê de ter escolhido um gerador de site estático como o 11ty.">
+    <meta name="author" content="Pedro Moreno">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty | Pedro Moreno | Analista &amp; Cientista de Dados">
+    <meta property="og:description" content="Um relato sobre o processo de recriar meu site pessoal, os desafios enfrentados e o porquê de ter escolhido um gerador de site estático como o 11ty.">
+    <meta property="og:url" content="https://pedrobeats.github.io/blog/minha-jornada-reconstruindo-o-site-com-11ty/">
+    
+    <meta property="og:image" content="https://pedrobeats.github.io/assets/images/blog/jornada-11ty-thumb.png">
+    
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 </head>
-<body>
+<body class="site-body">
     <header class="site-header">
-    <nav class="navigation-menu">
-        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/portfolio/">Portfólio</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/sobre/">Sobre</a></li>
-            <li><a href="/contato/">Contato</a></li>
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" >Início</a></li>
+            <li><a href="/portfolio/" >Portfólio</a></li>
+            <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
+            <li><a href="/sobre/" >Sobre</a></li>
+            <li><a href="/contato/" >Contato</a></li>
         </ul>
     </nav>
 </header>
 
-    <main class="main-content">
-        <article class="page-container">
+
+    <main class="main-content" id="main-content">
+        <article class="article-container">
+    <nav class="article-breadcrumb" aria-label="Navegação de retorno">
+        
+            <a href="/blog/" class="breadcrumb-link">← Voltar para o Blog</a>
+        
+    </nav>
+
     
-    
-    <div class="post-hero-image">
-        <img src="/assets/images/blog/jornada-11ty-thumb.png" alt="Imagem de cabeçalho para o post Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty">
+    <div class="article-hero-image">
+        <img src="/assets/images/blog/jornada-11ty-thumb.png" alt="Imagem de cabeçalho para Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty">
     </div>
     
-    
-    <header class="post-header">
-        <h1 class="page-title">Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty</h1>
-        
-        <p class="post-meta">Publicado em 04 de agosto de 2026</p>
-        
-        
-            <p class="page-intro">Um relato sobre o processo de recriar meu site pessoal, os desafios enfrentados e o porquê de ter escolhido um gerador de site estático como o 11ty.</p>
-        
 
+    <header class="article-header">
         
-            <div class="post-tags">
+            <div class="article-tags">
                 
                     <span class="tag-chip">Desenvolvimento Web</span>
                 
@@ -53,9 +80,29 @@
                 
             </div>
         
+
+        <h1 class="article-title">Do Zero ao Blog no Ar: Minha Jornada Reconstruindo o Site com 11ty</h1>
+
+        <div class="article-meta-bar">
+            
+                <span class="meta-item meta-date">
+                    <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    20 de junho de 2025
+                </span>
+            
+
+            <span class="meta-item meta-reading-time">
+                <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                4 min de leitura
+            </span>
+        </div>
+
+        
+            <p class="article-intro">Um relato sobre o processo de recriar meu site pessoal, os desafios enfrentados e o porquê de ter escolhido um gerador de site estático como o 11ty.</p>
+        
     </header>
 
-    <div class="post-content">
+    <div class="article-content">
         <p>Se você está lendo isso, seja bem-vindo à nova versão do meu site! O que você vê hoje é o resultado de um processo que começou com uma ideia simples: a necessidade de ter um espaço online que fosse verdadeiramente meu (o que significa que ele não é um primor de front nem receberá prêmios de UX), fácil de manter e que refletisse melhor meu trabalho atual. Este post é a história dessa jornada.</p>
 <h3>O Ponto de Partida: Por que um Site Estático?</h3>
 <p>Meu site antigo cumpria seu papel, mas eu sentia que era hora de uma mudança. Eu queria uma plataforma onde pudesse não só exibir meu portfólio, mas também escrever e compartilhar ideias em um blog.</p>
@@ -93,15 +140,45 @@
 
     </div>
 
+    <footer class="article-footer">
+        <div class="article-share-cta">
+            <p>Gostou ou tem dúvidas sobre este conteúdo? Conecte-se comigo no <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener">LinkedIn</a> ou veja outros projetos no <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        
+        <div class="article-nav-back">
+            
+                <a href="/blog/" class="btn btn-secondary">← Ver todos os artigos</a>
+            
+        </div>
+    </footer>
 </article>
+
     </main>
 
     <footer class="site-footer">
-    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
-    <p>
-        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
-        <a href="https://github.com/Pedrobeats">GitHub</a>
-    </p>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">PM<span class="logo-dot">.</span></a>
+            <p class="footer-tagline">Ciência de Dados, Engenharia Analítica e Automação.</p>
+        </div>
+
+        <div class="footer-links">
+            <span class="footer-label">Conecte-se:</span>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:pedromsantanna@gmail.com">E-mail</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Pedro Moreno. Todos os direitos reservados.</p>
+        <p class="footer-tech">Construído com <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a></p>
+    </div>
 </footer>
+
+
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

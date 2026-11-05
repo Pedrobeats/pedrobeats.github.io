@@ -3,45 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Informações do Tempo Integral do Espírito Santo | Pedro Moreno | Analista de Dados</title>
+    <title>Painel de Informações do Tempo Integral do Espírito Santo | Pedro Moreno | Analista &amp; Cientista de Dados</title>
+    
+    <meta name="description" content="Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.">
+    <meta name="author" content="Pedro Moreno">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Painel de Informações do Tempo Integral do Espírito Santo | Pedro Moreno | Analista &amp; Cientista de Dados">
+    <meta property="og:description" content="Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.">
+    <meta property="og:url" content="https://pedrobeats.github.io/portfolio/painel-tempo-integral/">
+    
+    <meta property="og:image" content="https://pedrobeats.github.io/assets/images/thumbs/pic02.jpg">
+    
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 </head>
-<body>
+<body class="site-body">
     <header class="site-header">
-    <nav class="navigation-menu">
-        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/portfolio/">Portfólio</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/sobre/">Sobre</a></li>
-            <li><a href="/contato/">Contato</a></li>
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" >Início</a></li>
+            <li><a href="/portfolio/" class="active" aria-current="page">Portfólio</a></li>
+            <li><a href="/blog/" >Blog</a></li>
+            <li><a href="/sobre/" >Sobre</a></li>
+            <li><a href="/contato/" >Contato</a></li>
         </ul>
     </nav>
 </header>
 
-    <main class="main-content">
-        <article class="page-container">
+
+    <main class="main-content" id="main-content">
+        <article class="article-container">
+    <nav class="article-breadcrumb" aria-label="Navegação de retorno">
+        
+            <a href="/portfolio/" class="breadcrumb-link">← Voltar para o Portfólio</a>
+        
+    </nav>
+
     
-    
-    <div class="post-hero-image">
-        <img src="/assets/images/thumbs/pic02.jpg" alt="Imagem de cabeçalho para o post Painel de Informações do Tempo Integral do Espírito Santo">
+    <div class="article-hero-image">
+        <img src="/assets/images/thumbs/pic02.jpg" alt="Imagem de cabeçalho para Painel de Informações do Tempo Integral do Espírito Santo">
     </div>
     
-    
-    <header class="post-header">
-        <h1 class="page-title">Painel de Informações do Tempo Integral do Espírito Santo</h1>
-        
-        <p class="post-meta">Publicado em 19 de junho de 2025</p>
-        
-        
-            <p class="page-intro">Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.</p>
-        
 
+    <header class="article-header">
         
-            <div class="post-tags">
+            <div class="article-tags">
                 
                     <span class="tag-chip">Python</span>
                 
@@ -53,9 +80,29 @@
                 
             </div>
         
+
+        <h1 class="article-title">Painel de Informações do Tempo Integral do Espírito Santo</h1>
+
+        <div class="article-meta-bar">
+            
+                <span class="meta-item meta-date">
+                    <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    20 de junho de 2025
+                </span>
+            
+
+            <span class="meta-item meta-reading-time">
+                <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                1 min de leitura
+            </span>
+        </div>
+
+        
+            <p class="article-intro">Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.</p>
+        
     </header>
 
-    <div class="post-content">
+    <div class="article-content">
         <p>Este projeto é um webapp interativo desenvolvido em Python com a biblioteca Streamlit. O objetivo principal é centralizar e apresentar de forma clara e acessível diversas bases de dados educacionais sobre o programa de Escola em Tempo Integral no estado do Espírito Santo.</p>
 <p>A ferramenta permite que gestores, educadores e o público em geral explorem os dados, identifiquem tendências e extraiam insights valiosos para a tomada de decisão.</p>
 <h3>Links</h3>
@@ -66,15 +113,45 @@
 
     </div>
 
+    <footer class="article-footer">
+        <div class="article-share-cta">
+            <p>Gostou ou tem dúvidas sobre este conteúdo? Conecte-se comigo no <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener">LinkedIn</a> ou veja outros projetos no <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        
+        <div class="article-nav-back">
+            
+                <a href="/portfolio/" class="btn btn-secondary">← Ver todos os projetos</a>
+            
+        </div>
+    </footer>
 </article>
+
     </main>
 
     <footer class="site-footer">
-    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
-    <p>
-        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
-        <a href="https://github.com/Pedrobeats">GitHub</a>
-    </p>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">PM<span class="logo-dot">.</span></a>
+            <p class="footer-tagline">Ciência de Dados, Engenharia Analítica e Automação.</p>
+        </div>
+
+        <div class="footer-links">
+            <span class="footer-label">Conecte-se:</span>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:pedromsantanna@gmail.com">E-mail</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Pedro Moreno. Todos os direitos reservados.</p>
+        <p class="footer-tech">Construído com <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a></p>
+    </div>
 </footer>
+
+
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

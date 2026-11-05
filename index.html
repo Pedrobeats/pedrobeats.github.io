@@ -3,42 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início | Pedro Moreno | Analista de Dados</title>
+    <title>Pedro Moreno | Analista &amp; Cientista de Dados</title>
+    
+    <meta name="description" content="Portfólio e artigos de Pedro Moreno sobre Ciência de Dados, Python, Streamlit, Machine Learning e automação no setor público.">
+    <meta name="author" content="Pedro Moreno">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pedro Moreno | Analista &amp; Cientista de Dados">
+    <meta property="og:description" content="Portfólio e artigos de Pedro Moreno sobre Ciência de Dados, Python, Streamlit, Machine Learning e automação no setor público.">
+    <meta property="og:url" content="https://pedrobeats.github.io/">
+    
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 </head>
-<body>
+<body class="site-body">
     <header class="site-header">
-    <nav class="navigation-menu">
-        <a href="/" class="nav-logo">PM.</a> <ul class="nav-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/portfolio/">Portfólio</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/sobre/">Sobre</a></li>
-            <li><a href="/contato/">Contato</a></li>
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" class="active" aria-current="page">Início</a></li>
+            <li><a href="/portfolio/" >Portfólio</a></li>
+            <li><a href="/blog/" >Blog</a></li>
+            <li><a href="/sobre/" >Sobre</a></li>
+            <li><a href="/contato/" >Contato</a></li>
         </ul>
     </nav>
 </header>
 
-    <main class="main-content">
-        <section class="hero-section">
-    <div class="hero-content">
-        <h1 class="hero-title">Pedro Moreno – Analista/Cientista de Dados</h1>
-        <p class="hero-subtitle">Transformando dados em insights e soluções inovadoras.</p>
-        <a href="/portfolio/" class="cta-button">Ver Portfólio</a>
-        <a href="/blog/" class="cta-button cta-button-secondary">Ler o Blog</a>
+
+    <main class="main-content" id="main-content">
+        
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Analista & Cientista de Dados • SEDU-ES</span>
+        </div>
+
+        <h1 class="hero-title">
+            Transformando dados em <span class="gradient-text">insights estratégicos</span> e automação inteligente.
+        </h1>
+
+        <p class="hero-subtitle">
+            Olá, sou <strong>Pedro Moreno</strong>. Desenvolvo pipelines de dados, modelos analíticos, dashboards e aplicações interativas em Python e Streamlit para transformar processos complexos em soluções ágeis e eficientes.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/portfolio/" class="btn btn-primary">
+                Ver Portfólio
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="/blog/" class="btn btn-secondary">
+                Ler o Blog
+            </a>
+            <a href="/sobre/" class="btn btn-ghost">
+                Sobre Mim →
+            </a>
+        </div>
+
+        <div class="tech-stack-strip">
+            <span class="tech-stack-label">Stack & Ferramentas:</span>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Tableau</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Geocodificação</span>
+                <span class="tech-tag">SQL</span>
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- Seção de Projetos em Destaque -->
+<section class="section-home">
+    <div class="section-header">
+        <div>
+            <span class="section-eyebrow">Trabalho Prático</span>
+            <h2 class="section-title">Projetos em Destaque</h2>
+        </div>
+        <a href="/portfolio/" class="section-link">Ver todo o portfólio →</a>
+    </div>
+
+    <div class="portfolio-grid"><article class="portfolio-card"><a href="/portfolio/painel-tempo-integral/" class="card-visual">
+                <img src="/assets/images/thumbs/pic02.jpg" alt="Imagem do projeto Painel de Informações do Tempo Integral do Espírito Santo" loading="lazy">
+            </a><div class="card-content">
+                
+                <div class="card-tags">
+                    
+                        <span class="tag-chip">Python</span>
+                    
+                        <span class="tag-chip">Streamlit</span>
+                    
+                        <span class="tag-chip">Pandas</span>
+                    
+                        <span class="tag-chip">Análise de Dados</span>
+                    
+                </div>
+                
+                
+                <h3 class="card-title">
+                    <a href="/portfolio/painel-tempo-integral/">Painel de Informações do Tempo Integral do Espírito Santo</a>
+                </h3>
+                
+                <p class="card-description">Webapp feito em Python/Streamlit, reunindo diversas bases de dados educacionais sobre o Tempo Integral no Espírito Santo.</p>
+                
+                <a href="/portfolio/painel-tempo-integral/" class="card-link">
+                    Explorar projeto 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </article><article class="portfolio-card"><a href="/portfolio/dashboard-power-bi/" class="card-visual">
+                <img src="/assets/images/thumbs/pic01.jpg" alt="Imagem do projeto Dashboard de Escolas em Tempo Integral no Power BI" loading="lazy">
+            </a><div class="card-content">
+                
+                <div class="card-tags">
+                    
+                        <span class="tag-chip">Power BI</span>
+                    
+                        <span class="tag-chip">Coleta de Dados</span>
+                    
+                        <span class="tag-chip">Visualização de Dados</span>
+                    
+                </div>
+                
+                
+                <h3 class="card-title">
+                    <a href="/portfolio/dashboard-power-bi/">Dashboard de Escolas em Tempo Integral no Power BI</a>
+                </h3>
+                
+                <p class="card-description">Dashboard feito coletando e desenhando manualmente a base de dados das escolas em tempo integral do Espírito Santo.</p>
+                
+                <a href="/portfolio/dashboard-power-bi/" class="card-link">
+                    Explorar projeto 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </article><article class="portfolio-card"><a href="/portfolio/analise-terceira-ponte/" class="card-visual">
+                <img src="/assets/images/thumbs/pic03.jpg" alt="Imagem do projeto Análise de Dados sobre o Pedágio da Terceira Ponte" loading="lazy">
+            </a><div class="card-content">
+                
+                <div class="card-tags">
+                    
+                        <span class="tag-chip">Web Scraping</span>
+                    
+                        <span class="tag-chip">Python</span>
+                    
+                        <span class="tag-chip">Tableau</span>
+                    
+                        <span class="tag-chip">Análise de Dados</span>
+                    
+                </div>
+                
+                
+                <h3 class="card-title">
+                    <a href="/portfolio/analise-terceira-ponte/">Análise de Dados sobre o Pedágio da Terceira Ponte</a>
+                </h3>
+                
+                <p class="card-description">Webscrapper feito em Python e Dashboard feito no Tableau Public para analisar os dados do pedágio.</p>
+                
+                <a href="/portfolio/analise-terceira-ponte/" class="card-link">
+                    Explorar projeto 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </article></div>
+</section>
+
+<!-- Seção de Posts Recentes -->
+<section class="section-home section-alt">
+    <div class="section-header">
+        <div>
+            <span class="section-eyebrow">Publicações & Reflexões</span>
+            <h2 class="section-title">Últimos Artigos do Blog</h2>
+        </div>
+        <a href="/blog/" class="section-link">Ver todos os artigos →</a>
+    </div>
+
+    <div class="post-cards-grid"><article class="post-card"><div class="post-card-body">
+                <div class="post-card-meta">
+                    <span class="post-date">30 de novembro de 2025</span>
+                    <span class="meta-dot">•</span>
+                    <span class="post-read">2 min de leitura</span>
+                </div>
+
+                <h3 class="post-card-title">
+                    <a href="/blog/geocodificando-180-mil-alunos-parte-3/">Geocodificando 180 Mil Alunos - O Script em Modo Profissional (Parte 3)</a>
+                </h3>
+
+                
+                    <p class="post-card-excerpt">Controle dinâmico com arquivos de flag em tempo de execução e cache em memória para finalizar o pipeline com sucesso.</p>
+                
+
+                
+                <div class="post-card-tags">
+                    
+                        <span class="tag-chip tag-chip-sm">python</span>
+                    
+                        <span class="tag-chip tag-chip-sm">automação</span>
+                    
+                        <span class="tag-chip tag-chip-sm">geocodificação</span>
+                    
+                        <span class="tag-chip tag-chip-sm">caching</span>
+                    
+                        <span class="tag-chip tag-chip-sm">flags</span>
+                    
+                </div>
+                
+            </div>
+        </article><article class="post-card"><div class="post-card-body">
+                <div class="post-card-meta">
+                    <span class="post-date">18 de novembro de 2025</span>
+                    <span class="meta-dot">•</span>
+                    <span class="post-read">2 min de leitura</span>
+                </div>
+
+                <h3 class="post-card-title">
+                    <a href="/blog/geocodificando-180-mil-alunos-parte-2/">Geocodificando 180 Mil Alunos - O Poder do Cache e dos Planos B (Parte 2)</a>
+                </h3>
+
+                
+                    <p class="post-card-excerpt">Estratégias de resiliência: adicionando um terceiro geocodificador, barra de progresso com tqdm e cache persistente em arquivo.</p>
+                
+
+                
+                <div class="post-card-tags">
+                    
+                        <span class="tag-chip tag-chip-sm">geocodificação</span>
+                    
+                        <span class="tag-chip tag-chip-sm">dados</span>
+                    
+                        <span class="tag-chip tag-chip-sm">cache</span>
+                    
+                        <span class="tag-chip tag-chip-sm">fallback</span>
+                    
+                </div>
+                
+            </div>
+        </article><article class="post-card"><div class="post-card-body">
+                <div class="post-card-meta">
+                    <span class="post-date">06 de novembro de 2025</span>
+                    <span class="meta-dot">•</span>
+                    <span class="post-read">2 min de leitura</span>
+                </div>
+
+                <h3 class="post-card-title">
+                    <a href="/blog/geocodificando-180-mil-alunos-parte-1/">Geocodificando 180 Mil Alunos - A Saga do Endereço ao Ponto no Mapa (Parte 1)</a>
+                </h3>
+
+                
+                    <p class="post-card-excerpt">Como transformamos mais de 180 mil endereços textuais de estudantes em coordenadas geográficas usando apenas ferramentas abertas e gratuitas.</p>
+                
+
+                
+                <div class="post-card-tags">
+                    
+                        <span class="tag-chip tag-chip-sm">geocodificação</span>
+                    
+                        <span class="tag-chip tag-chip-sm">python</span>
+                    
+                        <span class="tag-chip tag-chip-sm">planejamento escolar</span>
+                    
+                        <span class="tag-chip tag-chip-sm">dados educacionais</span>
+                    
+                </div>
+                
+            </div>
+        </article></div>
+</section>
+
+<!-- Banner de Conexão -->
+<section class="connect-banner">
+    <div class="connect-banner-inner">
+        <h2>Pronto para conversar sobre dados ou projetos?</h2>
+        <p>Sinta-se à vontade para me mandar uma mensagem ou acompanhar meus projetos nas redes.</p>
+        <div class="connect-banner-actions">
+            <a href="/contato/" class="btn btn-primary">Entrar em Contato</a>
+            <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener" class="btn btn-secondary">Conectar no LinkedIn</a>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <footer class="site-footer">
-    <p>© 2025 Pedro Moreno. Todos os direitos reservados.</p>
-    <p>
-        <a href="http://www.linkedin.com/in/pmbsantanna">LinkedIn</a> &bull; 
-        <a href="https://github.com/Pedrobeats">GitHub</a>
-    </p>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">PM<span class="logo-dot">.</span></a>
+            <p class="footer-tagline">Ciência de Dados, Engenharia Analítica e Automação.</p>
+        </div>
+
+        <div class="footer-links">
+            <span class="footer-label">Conecte-se:</span>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:pedromsantanna@gmail.com">E-mail</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Pedro Moreno. Todos os direitos reservados.</p>
+        <p class="footer-tech">Construído com <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a></p>
+    </div>
 </footer>
+
+
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
