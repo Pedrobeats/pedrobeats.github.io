@@ -1,6 +1,5 @@
 node_modules/
 .git/
 .idea/
-README.txt
-versão1.0/
-versao-2.0/
+.vscode/
+README.md
