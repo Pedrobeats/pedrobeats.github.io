@@ -5,17 +5,21 @@ module.exports = function(eleventyConfig) {
     // Shortcode para ano dinâmico
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-    // Coleção de Portfolio ordenada
+    // Coleção de Portfolio ordenada por data mais recente
     eleventyConfig.addCollection("portfolio", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/portfolio/*.md").sort(function(a, b) {
-            return (b.date || 0) - (a.date || 0);
+        return [...collectionApi.getFilteredByGlob("src/portfolio/*.md")].sort(function(a, b) {
+            const dateA = a.data?.date ? new Date(a.data.date).getTime() : (a.date instanceof Date ? a.date.getTime() : 0);
+            const dateB = b.data?.date ? new Date(b.data.date).getTime() : (b.date instanceof Date ? b.date.getTime() : 0);
+            return dateB - dateA;
         });
     });
 
-    // Coleção de Blog ordenada por data mais recente
+    // Coleção de Blog ordenada por data mais recente de forma robusta
     eleventyConfig.addCollection("blog", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/blog/*.md").sort(function(a, b) {
-            return (b.date || 0) - (a.date || 0);
+        return [...collectionApi.getFilteredByGlob("src/blog/*.md")].sort(function(a, b) {
+            const dateA = a.data?.date ? new Date(a.data.date).getTime() : (a.date instanceof Date ? a.date.getTime() : 0);
+            const dateB = b.data?.date ? new Date(b.data.date).getTime() : (b.date instanceof Date ? b.date.getTime() : 0);
+            return dateB - dateA;
         });
     });
 
