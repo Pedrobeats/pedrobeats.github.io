@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificando 300 mil motivos de faltas: Uma jornada entre Regex, Modelos Locais e LLMs | Pedro Moreno | Analista &amp; Cientista de Dados</title>
+    
+    <meta name="description" content="Como sair da força bruta da IA para uma arquitetura híbrida otimizada para processar textos desestruturados na educação pública.">
+    <meta name="author" content="Pedro Moreno">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Classificando 300 mil motivos de faltas: Uma jornada entre Regex, Modelos Locais e LLMs | Pedro Moreno | Analista &amp; Cientista de Dados">
+    <meta property="og:description" content="Como sair da força bruta da IA para uma arquitetura híbrida otimizada para processar textos desestruturados na educação pública.">
+    <meta property="og:url" content="https://pedrobeats.github.io/blog/classificando-300-mil-motivos-de-faltas/">
+    
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal com Cache-Busting -->
+    <link rel="stylesheet" href="/assets/css/style.css?v=2.1">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body class="site-body">
+    <header class="site-header">
+    <nav class="navigation-menu" aria-label="Navegação Principal">
+        <a href="/" class="nav-logo">
+            <span class="logo-symbol">PM</span><span class="logo-dot">.</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Alternar navegação" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/" >Início</a></li>
+            <li><a href="/portfolio/" >Portfólio</a></li>
+            <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
+            <li><a href="/sobre/" >Sobre</a></li>
+            <li><a href="/contato/" >Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main class="main-content" id="main-content">
+        <article class="article-container">
+    <nav class="article-breadcrumb" aria-label="Navegação de retorno">
+        
+            <a href="/blog/" class="breadcrumb-link">← Voltar para o Blog</a>
+        
+    </nav>
+
+    
+
+    <header class="article-header">
+        
+            <div class="article-tags">
+                
+                    <span class="tag-chip">python</span>
+                
+                    <span class="tag-chip">nlp</span>
+                
+                    <span class="tag-chip">machine learning</span>
+                
+                    <span class="tag-chip">sedu</span>
+                
+            </div>
+        
+
+        <h1 class="article-title">Classificando 300 mil motivos de faltas: Uma jornada entre Regex, Modelos Locais e LLMs</h1>
+
+        <div class="article-meta-bar">
+            
+                <span class="meta-item meta-date">
+                    <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    16 de novembro de 2026
+                </span>
+            
+
+            <span class="meta-item meta-reading-time">
+                <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                5 min de leitura
+            </span>
+        </div>
+
+        
+            <p class="article-intro">Como sair da força bruta da IA para uma arquitetura híbrida otimizada para processar textos desestruturados na educação pública.</p>
+        
+    </header>
+
+    <div class="article-content">
+        <p>Se você acompanhou a saga de geocodificação de 180 mil alunos, já sabe que na SEDU-ES nós lidamos com um volume massivo de dados que, muitas vezes, não vêm exatamente &quot;limpos&quot;.</p>
+<p>Desta vez, o desafio mudou de CEPs para textos livres. Nossa missão: classificar cerca de <strong>300 mil justificativas de faltas escolares</strong> registradas como <em>&quot;Outros Motivos&quot;</em>. O problema do campo de texto livre é que você encontra de tudo: desde um claro <code>&quot;Atestado médico CID J01&quot;</code> até coisas indecifráveis como <code>&quot;nan&quot;</code>, <code>&quot;estava chovendo muito&quot;</code> ou siglas internas como <code>&quot;AJUS&quot;</code> e <code>&quot;Busca Ativa&quot;</code>.</p>
+<p>Como transformar esse caos textual em dados estruturados para tomada de decisão? A resposta curta: Inteligência Artificial. A resposta longa (e realista): <strong>Uma arquitetura híbrida</strong> misturando a velha guarda do Regex com o estado da arte dos LLMs.</p>
+<p>Acompanhe a evolução dessa solução.</p>
+<h2>Tentativa 1: A ilusão do &quot;Joga tudo na IA&quot;</h2>
+<p>Quando você tem um martelo novo, tudo parece prego. Minha primeira abordagem foi carregar a base e jogar todos os textos únicos para um modelo <strong>Zero-Shot Classification</strong> rodando localmente na GPU (usando o excelente <code>mDeBERTa-v3-base-mnli-xnli</code>).</p>
+<pre><code class="language-python"># O canto da sereia: passar tudo para o classificador
+classificador = pipeline(&quot;zero-shot-classification&quot;, model=&quot;MoritzLaurer/mDeBERTa-v3-base-mnli-xnli&quot;, device=0)
+resultados = classificador(motivos_para_ia, categorias_ia, batch_size=32)
+</code></pre>
+<p>O resultado? Funcionou. Mas a que custo? Processar 30 mil textos únicos puramente por inferência semântica levou quase 15 minutos fritando a GPU do Colab. Além disso, notei um problema clássico: o modelo linguístico é ótimo para semântica geral, mas péssimo para jargões administrativos. Ele não faz ideia de que <code>&quot;254-R&quot;</code> significa <em>&quot;Busca Ativa&quot;</em> ou que um código de 3 letras e números (<code>J01</code>, <code>Z76</code>) é o CID de um atestado médico.</p>
+<p>Para esses casos, a confiança do modelo caía drasticamente. Precisávamos ser mais espertos.</p>
+<h2>Tentativa 2: A redenção do Regex (Arquitetura Híbrida)</h2>
+<p>Foi então que dei um passo atrás. Por que gastar poder computacional de GPU (e tempo) para descobrir que a palavra <code>&quot;atestado&quot;</code> significa <em>&quot;Médico/Válido&quot;</em>?</p>
+<p>Criei uma camada inicial usando <strong>Expressões Regulares (Regex) vetorizadas no Pandas</strong>. A ideia era simples: filtrar o óbvio e deixar para a IA apenas o que fosse complexo ou ambíguo.</p>
+<pre><code class="language-python">import numpy as np
+
+# Regras claras e rápidas
+m_med = df['motivo_clean'].str.contains(r'\b(?:atestado|laudo|cid|ubs|upa|hospital)\b', case=False, regex=True, na=False)
+m_busca = df['motivo_clean'].str.contains(r'\b(?:254-r|busca ativa)\b', case=False, regex=True, na=False)
+m_ajus = df['motivo_clean'].str.contains(r'\b(?:ajus|022-r)\b', case=False, regex=True, na=False)
+
+condicoes = [m_med, m_busca, m_ajus]
+escolhas = ['Médico/Válido', 'Portaria (Busca Ativa)', 'Justificada por Portaria (AJUS)']
+df['macrocategoria'] = np.select(condicoes, escolhas, default='Outros Motivos Diversos')
+</code></pre>
+<p>O impacto foi absurdo. De quase 300 mil linhas, o <strong>Regex resolveu 288.175 em questão de segundos</strong>. O volume de textos únicos que realmente precisavam de análise semântica caiu de 30 mil para apenas <strong>2.646</strong>.</p>
+<p>Agora, o modelo Zero-Shot rodava de forma incrivelmente rápida e focada. Mas, ainda assim, alguns textos ambíguos retornavam com baixa confiança (abaixo de 70%).</p>
+<h2>Tentativa 3: A Tríplice Coroa (Regex + Zero-Shot + LLM via API)</h2>
+<p>Para alcançar a excelência, desenhei um funil de três estágios:</p>
+<ol>
+<li><strong>Filtro Grosso:</strong> Regex (Rápido e cirúrgico para padrões conhecidos).</li>
+<li><strong>Filtro Médio:</strong> Modelo Local Zero-Shot (Entende o contexto de frases comuns sem custo de API).</li>
+<li><strong>Filtro Fino:</strong> Tudo que o Zero-Shot ficasse em dúvida (<code>confiança &lt; 70%</code>), seria enviado para um LLM robusto via API comercial (TypeSafe / Jev).</li>
+</ol>
+<p>Para garantir que a chamada de API não virasse um gargalo, implementei duas coisas fundamentais: <strong>Multithreading</strong> (para disparar várias requisições simultâneas) e um sistema de <strong>Cache local</strong>, para nunca pagar/esperar duas vezes pela classificação do mesmo texto.</p>
+<pre><code class="language-python">import json
+import hashlib
+from concurrent.futures import ThreadPoolExecutor
+from typesafe_sdk import TypeSafeClient, Choice
+
+# Isolando apenas o que a IA local não conseguiu resolver
+residuais = tab.index[tab['macro'] == 'Outros Motivos Diversos (Requer Revisão)'].tolist()
+cache = json.loads(ARQUIVO_CACHE.read_text()) if ARQUIVO_CACHE.exists() else {}
+
+def classificar_api(client, texto_norm):
+    chave = hashlib.md5(texto_norm.encode()).hexdigest()
+    if chave in cache:
+        return texto_norm, cache[chave]  # Retorna do cache instantaneamente
+
+    # Se não está no cache, chama a API
+    r = client.system_one(
+        state={&quot;texto_avaliar&quot;: texto_norm},
+        questions={
+            &quot;classificacao&quot;: Choice(
+                instructions=&quot;Classifique o motivo da falta...&quot;,
+                criteria=CATEGORIAS_DESC
+            )
+        }
+    )
+
+    # Salva no cache para a próxima vez
+    cache[chave] = r.choices[&quot;classificacao&quot;].choice
+    return texto_norm, cache[chave]
+
+# Multithreading para acelerar chamadas de rede
+with TypeSafeClient(model=&quot;jev-1.13.0&quot;) as client:
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        resultados = list(ex.map(lambda txt: classificar_api(client, txt), residuais))
+</code></pre>
+<h2>O Resultado Final</h2>
+<p>A base de 300 mil justificativas foi categorizada perfeitamente:</p>
+<ul>
+<li><strong>~96%</strong> resolvido via expressões regulares em 5 segundos.</li>
+<li><strong>~3%</strong> resolvido pelo modelo Semântico Zero-Shot (gratuito e local) em poucos minutos.</li>
+<li><strong>~1%</strong> (os casos bizarros e super complexos) passados por um LLM avançado com alta precisão e baixo custo, amparados por cache e processamento paralelo.</li>
+</ul>
+<h2>O que aprendemos?</h2>
+<p>A grande lição aqui é que <strong>arquitetura de dados importa mais que o modelo em si</strong>. Substituir toda a sua lógica de negócio por chamadas puras a uma API de IA é caro, lento e propenso a erros em regras engessadas do setor público.</p>
+<p>Saber orquestrar a velocidade do código legado (Regex) com a inteligência dos modelos locais e o raciocínio avançado dos LLMs modernos é o que realmente diferencia um script de um produto escalável.</p>
+<p>E você, já teve que domar alguma base de textos gigantesca? Me conta lá no <a href="https://github.com/Pedrobeats">GitHub</a>!</p>
+
+    </div>
+
+    <footer class="article-footer">
+        <div class="article-share-cta">
+            <p>Gostou ou tem dúvidas sobre este conteúdo? Conecte-se comigo no <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener">LinkedIn</a> ou veja outros projetos no <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        
+        <div class="article-nav-back">
+            
+                <a href="/blog/" class="btn btn-secondary">← Ver todos os artigos</a>
+            
+        </div>
+    </footer>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">PM<span class="logo-dot">.</span></a>
+            <p class="footer-tagline">Ciência de Dados, Engenharia Analítica e Automação.</p>
+        </div>
+
+        <div class="footer-links">
+            <span class="footer-label">Conecte-se:</span>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/pmbsantanna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Pedrobeats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:pedromsantanna@gmail.com">E-mail</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Pedro Moreno. Todos os direitos reservados.</p>
+        <p class="footer-tech">Construído com <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a></p>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js?v=2.1" defer></script>
+</body>
+</html>
